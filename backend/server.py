@@ -394,6 +394,10 @@ async def get_game(game_id: str):
         if not game_doc:
             raise HTTPException(status_code=404, detail="Game not found")
         
+        # Remove MongoDB ObjectId for JSON serialization
+        if "_id" in game_doc:
+            del game_doc["_id"]
+        
         return {"status": "success", "game_state": game_doc}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
