@@ -207,6 +207,12 @@ const FlammeRougeGame = () => {
     return gameState.teams.flatMap(team => team.riders);
   };
 
+  const canSelectCard = () => {
+    return gameState && 
+           gameState.current_phase === 'card_selection' && 
+           !getHumanRider()?.played_card;
+  };
+
   const canProcessTurn = () => {
     if (!gameState) return false;
     
