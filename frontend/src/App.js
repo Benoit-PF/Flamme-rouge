@@ -267,7 +267,7 @@ const FlammeRougeGame = () => {
             <div className="flex space-x-2">
               <button
                 onClick={processTurn}
-                disabled={loading || gameState.current_phase === 'card_selection'}
+                disabled={loading || !canProcessTurn()}
                 className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-50"
               >
                 Process Turn
