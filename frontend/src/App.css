@@ -1,38 +1,123 @@
 .App {
-    text-align: center;
+  text-align: center;
 }
 
 .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 .App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
 }
 
 .App-link {
-    color: #61dafb;
+  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Flamme Rouge specific styles */
+.track-container {
+  background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 50%, #DEB887 100%);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.card-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rider-token {
+  transition: all 0.3s ease-in-out;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.game-phase {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.terrain-start {
+  background: linear-gradient(45deg, #4ade80, #22c55e);
+}
+
+.terrain-normal {
+  background: linear-gradient(45deg, #e5e7eb, #d1d5db);
+}
+
+.terrain-mountain {
+  background: linear-gradient(45deg, #d97706, #ea580c);
+}
+
+.terrain-downhill {
+  background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+}
+
+.terrain-cobblestone {
+  background: linear-gradient(45deg, #6b7280, #4b5563);
+}
+
+.terrain-finish {
+  background: linear-gradient(45deg, #ef4444, #dc2626);
+}
+
+/* Animation for card selection */
+.card-selected {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Track scrolling */
+.track-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.track-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.track-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.track-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
